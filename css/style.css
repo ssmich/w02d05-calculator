@@ -1,0 +1,52 @@
+body {
+    justify-content: center;
+}
+.boundary {
+    border: 1px solid black;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
+
+#output {
+    font-size: 60px;
+    text-align: right;
+    height: 70px;
+    padding: 5px;
+    background-color: lightgray;
+}
+#buttons {
+    background-color: blue;
+    font-size: 32px;
+    width: 64px;
+    text-align: center;
+    /* flex-wrap: wrap; */
+    /* max-width: 64px; */
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.row div {
+    width: 75px;
+    font-size: 32px;
+    text-align: center;
+    padding: 2px;
+    border: 2px solid white;
+    background-color: lightskyblue;
+}
+.row div #buttons{
+    background-color: blue;
+}
+.numbers {
+    background-color: blue;
+    font-size: 32px;
+    width: 64px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 64px;
+}
