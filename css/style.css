@@ -1,6 +1,12 @@
 body {
     justify-content: center;
 }
+h1 {
+    font-family: cursive;
+    text-align: center;
+    font-size: 50px;
+    color: rgb(76, 170, 92);
+}
 .boundary {
     border: 1px solid black;
     position: fixed;
@@ -15,16 +21,10 @@ body {
     font-size: 60px;
     text-align: right;
     height: 70px;
-    padding: 5px;
-    background-color: lightgray;
-}
-#buttons {
-    background-color: blue;
-    font-size: 32px;
-    width: 64px;
-    text-align: center;
-    /* flex-wrap: wrap; */
-    /* max-width: 64px; */
+    padding: 7px;
+    background-color: rgb(151, 149, 149);
+    border: 2px solid white;
+    color: white;
 }
 .row {
     display: flex;
@@ -39,14 +39,6 @@ body {
     border: 2px solid white;
     background-color: lightskyblue;
 }
-.row div #buttons{
-    background-color: blue;
-}
-.numbers {
-    background-color: blue;
-    font-size: 32px;
-    width: 64px;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 64px;
+.row div.operator {
+    background-color: rgb(250, 222, 62);
 }

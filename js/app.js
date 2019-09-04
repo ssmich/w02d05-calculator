@@ -1,19 +1,34 @@
-// const todos = [];
-// const done = [];
 const que = 0
-const ouput = "345"
-const outputCalc = Number(ouput)
-console.log(outputCalc);
-$(".numbers").click(function {
-        que = $(this).val();
-        output.concat($(this).val());
-    };
-)
+// const ouput = ""
+// const outputCalc = Number(ouput)
+var x = 10;
+// console.log(outputCalc);
 
-function operation(que,$(this).val){
-    event.preventDefault()
-
+function showNumber (){
+    $("#output").text($("#output").text()+$(this).text())
 }
+$(".number").click(showNumber);
+$("button").click(function(){
+    $("p").off("click.mySomething");
+});
+console.log()
+$('#b1').click(function(){
+        $('#input').val($('#input').val()+$(this).val());
+    }
+);
+// $("#seven").on('click', (e)=> {
+//     console.log(e.target.tagName);
+//     if(e.target.tagName === 'BUTTON'){
+//       $(e.currentTarget).hide();
+//       console.log($(e.target).text());
+//     }
+//   });
+// document.getElementById("ouput").innerHTML = output;
+
+// function operation(que,$(this).val){
+//     event.preventDefault()
+
+// }
 // $(".numbers").click(function{
 //     que = $(this).val();
 // })
