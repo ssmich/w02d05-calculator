@@ -1,62 +1,72 @@
-const que = 0
-// const ouput = ""
-// const outputCalc = Number(ouput)
-var x = 10;
-// console.log(outputCalc);
+let num1 = '';
+let num2 = '';
+let operator = '';
+let total = '';
 
-function showNumber (){
-    $("#output").text($("#output").text()+$(this).text())
-}
-$(".number").click(showNumber);
-$("button").click(function(){
-    $("p").off("click.mySomething");
-});
-console.log()
-$('#b1').click(function(){
-        $('#input').val($('#input').val()+$(this).val());
-    }
-);
-// $("#seven").on('click', (e)=> {
-//     console.log(e.target.tagName);
-//     if(e.target.tagName === 'BUTTON'){
-//       $(e.currentTarget).hide();
-//       console.log($(e.target).text());
-//     }
-//   });
-// document.getElementById("ouput").innerHTML = output;
+function handleNum (num) {
+  if (num1 === '') {
+    num1 = num;    
+  } else {
+    num2 = num;
+  }
+  displayButton(num);
+};
 
-// function operation(que,$(this).val){
-//     event.preventDefault()
+function handleOperator (oper) {
+  if (oper === 'c'){
+    $('.output').text('');
+    num1 = '';
+    operator = '';
+    num2 = '';
+    total = '';
+  }
+  if (operator === '') {
+    operator = oper;
+  } else {
+    handleTotal();
+    operator = oper;
+  };
+};
 
-// }
-// $(".numbers").click(function{
-//     que = $(this).val();
-// })
+function displayButton(btn) {
+  console.log(btn);
+  $('.output').text(btn);
+};
 
+function handleTotal() {
+  if (operator != '') {
+    switch (operator) {
+      case '+': total = +num1 + +num2;
+      displayButton(total);
+      break; 
+      case '-': total = +num1 - +num2;
+      console.log('num1: ', num1)
+      console.log('num2: ', num2)
+      console.log('total after minus: ', total)
+      displayButton(total);
+      break; 
+      case '*': total = +num1 * +num2;
+      displayButton(total);
+      break; 
+      case '/': total = +num1 / +num2;
+      displayButton(total);
+      break;    
+    };
+  };
+  updateVariables();
+};
 
-// $(".operators").click(operation)
+function updateVariables() {
+  num1 = total;
+  num2 = '';
+};
 
-// function 
-// function submitTodo(event){
-//     event.preventDefault()
-//     const userInput = $("#new-todo").val()
-//     todos.push(userInput);
-//     $('#new-todo').val("");
-//     renderToDos();
-// }
-// $("#submit-todo").on("submit", submitTodo);
-// function renderToDos(){
-//     $('ul').empty();
-//     todos.forEach(function(todo){
-//         $('#todos').append(`<li>${todo}</li>`)
-//     })
-//     done.forEach(function(todo){
-//         $('#done').append(`<li>${todo}</li>`)
-//     })
-// }
-// $('body').on('click', '#todos li', function(e){
-//     const index = $(e.target).index()
-//     const finishedItem = todos.splice(index, 1)[0];
-//     done.push(finishedItem);
-//     renderToDos();
-// })
+  $('.button').on('click', (e)  => {
+    let btn = e.target.innerHTML;
+    console.log(btn);
+    if (btn >= '0' && btn <= '9') {
+      handleNum(btn);
+    } else {
+      handleOperator(btn);        
+    }    
+  });
